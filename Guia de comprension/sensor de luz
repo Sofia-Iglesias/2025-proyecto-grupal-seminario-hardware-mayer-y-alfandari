@@ -1,0 +1,38 @@
+
+
+## **TP \- Guía de Comprensión de Componentes \- Proyecto Seminario**
+
+Antes de recibir los componentes físicos, cada grupo deberá responder esta guía y realizar una simulación funcional del circuito propuesto.
+
+El objetivo de la guía es asegurarse de que comprendan el principio de funcionamiento, las conexiones y la lógica de programación de los elementos que van a utilizar.
+
+* Las respuestas deben ser claras, completas y referidas al componente elegido.  
+* Cada grupo deberá crear en el repositorio del proyecto una carpeta llamada **“Guía de Comprensión”**, donde se deberán subir un archivo respondiendo la Guía por cada componente utilizado.  
+* El nombre de cada archivo debe seguir el formato: *Nombre del proyecto \- Apellido1 \- Apellido2 \- Nombre del componente*.  
+  * Por ejemplo: *EstaciónMeteorológica \- Iglesias \- Mischener \- SensorDeTemperatura.*  
+* ***La entrega es obligatoria:*** sin la presentación de esta guía completa y la simulación correspondiente, no se entregarán los componentes físicos para el armado del proyecto.
+
+### **Guía de Preguntas**
+
+#### **Nombre del componente: (Sensor de luz (LDR))
+
+1. ¿Qué tipo de dispositivo es (sensor o actuador)? Explicá brevemente su función principal.  
+Sensor
+
+
+2. ¿Qué tipo de señal utiliza para comunicarse con Arduino?  
+Usa una señal analógica, que varía según la intensidad de la luz.
+
+3. ¿Cuál es el rango de valores que puede entregar o recibir el componente?
+0 → mucha luz
+
+
+1023 → oscuridad o poca luz
+
+
+4. ¿Qué pines de conexión tiene el componente? Ennumerar y describir su función.  
+
+La LDR tiene dos patas:
+Una pata va al 5V, para alimentar el divisor de tensión.
+La otra pata se conecta al pin A1 del Arduino y a una resistencia de 10 kΩ que va a GND.
+ Esa resistencia forma un divisor que convierte los cambio
