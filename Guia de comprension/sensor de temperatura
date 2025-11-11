@@ -1,0 +1,35 @@
+
+## **TP \- Guía de Comprensión de Componentes \- Proyecto Seminario**
+
+Antes de recibir los componentes físicos, cada grupo deberá responder esta guía y realizar una simulación funcional del circuito propuesto.
+
+El objetivo de la guía es asegurarse de que comprendan el principio de funcionamiento, las conexiones y la lógica de programación de los elementos que van a utilizar.
+
+* Las respuestas deben ser claras, completas y referidas al componente elegido.  
+* Cada grupo deberá crear en el repositorio del proyecto una carpeta llamada **“Guía de Comprensión”**, donde se deberán subir un archivo respondiendo la Guía por cada componente utilizado.  
+* El nombre de cada archivo debe seguir el formato: *Nombre del proyecto \- Apellido1 \- Apellido2 \- Nombre del componente*.  
+  * Por ejemplo: *EstaciónMeteorológica \- Iglesias \- Mischener \- SensorDeTemperatura.*  
+* ***La entrega es obligatoria:*** sin la presentación de esta guía completa y la simulación correspondiente, no se entregarán los componentes físicos para el armado del proyecto.
+
+### **Guía de Preguntas**
+
+#### **Nombre del componente: (Sensor de temperatura tmp36)
+
+1. ¿Qué tipo de dispositivo es (sensor o actuador)? Explicá brevemente su función principal.  
+Sensor
+
+
+2. ¿Qué tipo de señal utiliza para comunicarse con Arduino?  
+Usa una señal analógica (el voltaje cambia según la temperatura).
+
+
+3. ¿Cuál es el rango de valores que puede entregar o recibir el componente?
+ Entrega valores analógicos entre 0 V y 1,75 V, que el Arduino lee como números de 0 a 1023.
+Aproximadamente mide temperaturas entre –40 °C y +125 °C.
+4. ¿Qué pines de conexión tiene el componente? Ennumerar y describir su función.  
+
+VS: alimenta el sensor (5V)
+
+
+GND: tierra del sensor
+Vout: envía la señal analógica al arduino
