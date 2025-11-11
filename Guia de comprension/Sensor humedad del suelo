@@ -1,0 +1,37 @@
+
+
+## **TP \- Guía de Comprensión de Componentes \- Proyecto Seminario**
+
+Antes de recibir los componentes físicos, cada grupo deberá responder esta guía y realizar una simulación funcional del circuito propuesto.
+
+El objetivo de la guía es asegurarse de que comprendan el principio de funcionamiento, las conexiones y la lógica de programación de los elementos que van a utilizar.
+
+* Las respuestas deben ser claras, completas y referidas al componente elegido.  
+* Cada grupo deberá crear en el repositorio del proyecto una carpeta llamada **“Guía de Comprensión”**, donde se deberán subir un archivo respondiendo la Guía por cada componente utilizado.  
+* El nombre de cada archivo debe seguir el formato: *Nombre del proyecto \- Apellido1 \- Apellido2 \- Nombre del componente*.  
+  * Por ejemplo: *EstaciónMeteorológica \- Iglesias \- Mischener \- SensorDeTemperatura.*  
+* ***La entrega es obligatoria:*** sin la presentación de esta guía completa y la simulación correspondiente, no se entregarán los componentes físicos para el armado del proyecto.
+
+### **Guía de Preguntas**
+
+#### **Nombre del componente: (Sensor de humedad)
+
+1. ¿Qué tipo de dispositivo es (sensor o actuador)? Explicá brevemente su función principal.  
+Sensor
+
+
+2. ¿Qué tipo de señal utiliza para comunicarse con Arduino?  
+Usa una señal analógica
+
+3. ¿Cuál es el rango de valores que puede entregar o recibir el componente?
+0: tierra muy húmeda
+1023: tierra muy seca  
+
+4. ¿Qué pines de conexión tiene el componente? Ennumerar y describir su función.  
+ VCC : alimenta el sensor con 3.3v o 5v .
+GND: conecta  a tierra, cierra el circuito eléctrico
+AOUT: salida analógica, manda un voltaje que cambia según la humedad del suelo, más voltaje significa que la tierra está más seca y menos voltaje significa que la tierra está más húmeda.
+
+5. ¿Qué pin o pines de Arduino utilizan para conectarlo? ¿Por qué elegiste esos pines?  
+Se conecta al pin A0. Porque el sensor entrega una señal analógica variable segun la humedad y los pines analógicos A0-A5 del arduino son los únicos que pueden leer este tipo de señal. Los digitales solo leen 0 o 1.
+
