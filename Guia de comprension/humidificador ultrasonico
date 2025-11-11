@@ -1,0 +1,29 @@
+
+## **TP \- Guía de Comprensión de Componentes \- Proyecto Seminario**
+
+Antes de recibir los componentes físicos, cada grupo deberá responder esta guía y realizar una simulación funcional del circuito propuesto.
+
+El objetivo de la guía es asegurarse de que comprendan el principio de funcionamiento, las conexiones y la lógica de programación de los elementos que van a utilizar.
+
+* Las respuestas deben ser claras, completas y referidas al componente elegido.  
+* Cada grupo deberá crear en el repositorio del proyecto una carpeta llamada **“Guía de Comprensión”**, donde se deberán subir un archivo respondiendo la Guía por cada componente utilizado.  
+* El nombre de cada archivo debe seguir el formato: *Nombre del proyecto \- Apellido1 \- Apellido2 \- Nombre del componente*.  
+  * Por ejemplo: *EstaciónMeteorológica \- Iglesias \- Mischener \- SensorDeTemperatura.*  
+* ***La entrega es obligatoria:*** sin la presentación de esta guía completa y la simulación correspondiente, no se entregarán los componentes físicos para el armado del proyecto.
+
+**Guía de Preguntas**
+
+Nombre del componente: (Humidificador ultrasónico) 
+
+1. ¿Qué tipo de dispositivo es (sensor o actuador)? Explicá brevemente su función principal. Es un actuador, porque produce una acción física: genera niebla o vapor de agua. 
+
+2. ¿Qué tipo de señal utiliza para comunicarse con Arduino? Usa una señal digital (0 o 1).
+ El Arduino enciende o apaga el humidificador mandando un valor HIGH (1) o LOW (0) a través de un relevador o transistor, ya que el humidificador necesita más corriente que la que el Arduino puede dar. 
+
+3. ¿Cuál es el rango de valores que puede entregar o recibir el componente? 
+Recibe solo dos estados: 0 (LOW) → apagado 1 (HIGH) → encendido 
+
+4. ¿Qué pines de conexión tiene el componente? 
+Ennumerar y describir su función. +V (alimentación): aquí conectás la fuente de alimentación del humidificador (puede ser 5 V o 12 V según el modelo). Su función es darle la energía necesaria para generar la niebla; nunca conectar esto directo al pin del Arduino. GND (tierra): se conecta a la tierra de la fuente y debe compartirse con la tierra del Arduino para que la señal de control funcione correctamente. Su función es cerrar el circuito de alimentación. IN (señal de control): es la entrada que recibe la orden de encender/apagar. El Arduino la controla mediante un pin digital (por ejemplo D8), pero no debe conectar directamente a la carga: la señal IN debe ir a un módulo relé o a un transistor/MOSFET que actúe como interruptor entre la alimentación (+V) y el humidificador. La función del IN es recibir HIGH para encender y LOW para apagar. 
+
+5. ¿Qué pin o pines de Arduino utilizan para conectarlo? ¿Por qué elegiste esos pines? Se conecta al pin digital D8 (por ejemplo).
