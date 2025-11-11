@@ -1,0 +1,40 @@
+## **TP \- Guía de Comprensión de Componentes \- Proyecto Seminario**
+
+Antes de recibir los componentes físicos, cada grupo deberá responder esta guía y realizar una simulación funcional del circuito propuesto.
+
+El objetivo de la guía es asegurarse de que comprendan el principio de funcionamiento, las conexiones y la lógica de programación de los elementos que van a utilizar.
+
+* Las respuestas deben ser claras, completas y referidas al componente elegido.  
+* Cada grupo deberá crear en el repositorio del proyecto una carpeta llamada **“Guía de Comprensión”**, donde se deberán subir un archivo respondiendo la Guía por cada componente utilizado.  
+* El nombre de cada archivo debe seguir el formato: *Nombre del proyecto \- Apellido1 \- Apellido2 \- Nombre del componente*.  
+  * Por ejemplo: *EstaciónMeteorológica \- Iglesias \- Mischener \- SensorDeTemperatura.*  
+* ***La entrega es obligatoria:*** sin la presentación de esta guía completa y la simulación correspondiente, no se entregarán los componentes físicos para el armado del proyecto.
+
+**Guía de Preguntas**
+
+Nombre del componente: (Ventilador)
+
+¿Qué tipo de dispositivo es (sensor o actuador)? Explicá brevemente su función principal.
+ Es un actuador, porque produce una acción física: mueve aire para bajar la temperatura cuando el ambiente está muy caliente.
+
+
+¿Qué tipo de señal utiliza para comunicarse con Arduino?
+ Usa una señal digital (0 o 1).
+ El Arduino enciende o apaga el ventilador mandando un valor HIGH (1) o LOW (0) a través de un relé o transistor, ya que el ventilador necesita más corriente de la que puede dar el Arduino.
+
+
+¿Cuál es el rango de valores que puede entregar o recibir el componente?
+ Recibe solo dos estados:
+ 0 (LOW) → apagado
+ 1 (HIGH) → encendido
+
+
+¿Qué pines de conexión tiene el componente? Ennumerar y describir su función.
+ +V (alimentación): se conecta a una fuente de 5V o 12V según el modelo. Su función es alimentar el motor del ventilador.
+ GND (tierra): se conecta a tierra, y debe compartirse con el GND del Arduino.
+ IN (señal): recibe la señal de control desde un pin digital del Arduino (por ejemplo D7). Esa señal pasa por un relé o transistor que actúa como interruptor.
+
+
+¿Qué pin o pines de Arduino utilizan para conectarlo? ¿Por qué elegiste esos pines?
+ Se conecta al pin digital D7.
+ Porque los pines digitales pueden enviar señales HIGH o LOW para encender 
