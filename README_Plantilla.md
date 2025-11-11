@@ -46,15 +46,15 @@ buzzer
 
 ## **`Etapas del proyecto`**
 ### Etapa 1:
-- `Acción 1`
-- `Acción 2`
+- conectar circuito a arduino
+- el sensor mide la temperatura
 
 ### Etapa 2:
-- `Acción 1`
-- `Acción 2`
+- el sensor mide la humedad
+- el sensor mide la luz
 
 ## **`Extras`**
 
-- `Extra 1`  
-- `Extra 2`  
-- `Extra 3`
+- dependiendo de la temperatura se prende o no el ventilador
+- dependiendo de la humedad se prende o no el humidificador
+- dependiendo de la luz se prende o no la luz de crecimiento artificial
