@@ -1,0 +1,73 @@
+**Guía de Preguntas**
+
+Nombre del componente: (Ventilador)
+
+¿Qué tipo de dispositivo es (sensor o actuador)? Explicá brevemente su función principal.
+ Es un actuador, porque produce una acción física: mueve aire para bajar la temperatura cuando el ambiente está muy caliente.
+
+
+¿Qué tipo de señal utiliza para comunicarse con Arduino?
+ Usa una señal digital (0 o 1).
+ El Arduino enciende o apaga el ventilador mandando un valor HIGH (1) o LOW (0) a través de un relé o transistor, ya que el ventilador necesita más corriente de la que puede dar el Arduino.
+
+
+¿Cuál es el rango de valores que puede entregar o recibir el componente?
+ Recibe solo dos estados:
+ 0 (LOW) → apagado
+ 1 (HIGH) → encendido
+
+
+¿Qué pines de conexión tiene el componente? Ennumerar y describir su función.
+ +V (alimentación): se conecta a una fuente de 5V o 12V según el modelo. Su función es alimentar el motor del ventilador.
+ GND (tierra): se conecta a tierra, y debe compartirse con el GND del Arduino.
+ IN (señal): recibe la señal de control desde un pin digital del Arduino (por ejemplo D7). Esa señal pasa por un relé o transistor que actúa como interruptor.
+
+
+¿Qué pin o pines de Arduino utilizan para conectarlo? ¿Por qué elegiste esos pines?
+ Se conecta al pin digital D7.
+ Porque los pines digitales pueden enviar señales HIGH o LOW para encender o apagar el actuador mediante un transistor o módulo relé.
+
+
+Dibujá y explicá brevemente el esquema de conexión del componente con Arduino (incluyendo resistencias si son necesarias).
+ D7 → IN del relé o transistor
+ 5V o 12V → +V del ventilador
+ GND → GND común con Arduino
+
+
+¿Cuál es el principio de funcionamiento del componente?
+ El ventilador se enciende cuando la temperatura medida por el sensor TMP36 supera un cierto valor (por ejemplo 28 °C). El Arduino envía una señal HIGH al pin D7, activando el relé o transistor que permite el paso de corriente al ventilador. Cuando la temperatura baja, la señal pasa a LOW y el ventilador se apaga.
+
+
+¿Utiliza alguna librería particular para programarlo?
+ No necesita ninguna librería especial. Se usa digitalWrite().
+
+
+¿Cómo se interpreta el dato de entrada o salida del componente en el programa?
+ El Arduino lee el valor analógico del TMP36, lo convierte a grados Celsius y, si el valor supera un umbral (por ejemplo 28 °C), manda digitalWrite(D7, HIGH) para encender el ventilador.
+
+
+¿Qué limitaciones o precauciones eléctricas hay que tener en cuenta?
+ El ventilador no debe conectarse directamente al Arduino, porque consume demasiada corriente.
+ Debe usarse un transistor o módulo relé y una fuente externa de 5V o 12V.
+ Evitar cortocircuitos y verificar la polaridad del motor.
+
+
+¿Cómo verificarías que el componente funciona correctamente antes de incorporarlo al proyecto final?
+ Se puede probar con un código simple que encienda y apague el ventilador (o un LED que lo simule) enviando señales HIGH y LOW desde Arduino.
+
+
+Simular en Tinkercad e incluir el link de la simulación.
+
+
+https://www.tinkercad.com/things/11ixfeH8s8g-bodacious-jofo/editel?returnTo=https%3A%2F%2Fwww.tinkercad.com%2Fdashboard
+
+
+
+En caso de aplicar, ¿qué valor o lectura esperás obtener en la simulación si el componente funciona correctamente?
+ Cuando la temperatura sea mayor a 28 °C, el “LED” (que simula el ventilador) se enciende.
+
+
+¿Cómo podría fallar el componente o cómo detectarías un mal funcionamiento en el código o en el circuito?
+ No enciende: puede haber error en la conexión o falta de alimentación externa.
+ Encendido permanente: puede ser error en el código o transistor trabado.
+ Parpadeos o variaciones: problema de conexión floja o temperatura mal calibrada.

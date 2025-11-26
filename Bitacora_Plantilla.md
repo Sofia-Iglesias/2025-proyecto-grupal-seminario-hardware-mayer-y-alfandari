@@ -5,8 +5,8 @@
 
 ## **`Integrante/s`**
 
-- `Nombre 1`  
-- `Nombre 2`
+- simon alfandari
+- gonza mayer
 
 
 ---
@@ -14,22 +14,22 @@
 
 ## **`Semana 1`**
 
-**`Fecha:`**
+20/10/2025
 
 **`Actividades Realizadas:`**
 
-- `Actividad 1`  
-- `Actividad 2`
+- ver componentes del proyecto
+- empezar guia de preguntas
 
 **`Dificultades:`**
 
-- `Dificultad 1`  
-- `Dificultad 2`
+- pensar idea de proyecto
+- responder y buscar la respuesta a la guia de poreguntas
 
 **`Próximos Pasos:`**
 
-- `Próximo paso 1`  
-- `Próximo paso 2`
+- empezar simulacion de proyecto 
+- terminar guia de preguntas
 
 
 ---
@@ -37,19 +37,19 @@
 
 ## **`Semana 2`**
 
-**`Fecha:`**
+28/10/2025
 
 **`Actividades Realizadas:`**
 
-- `Actividad 1`  
-- `Actividad 2`
+- terminar guia de preguntas
+- empezar el readme
 
 **`Dificultades:`**
 
-- `Dificultad 1`  
-- `Dificultad 2`
+- buscar la info y responder las oreguntas q quedan
+- empezar ritmi recopilando informacion
 
 **`Próximos Pasos:`**
 
-- `Próximo paso 1`  
-- `Próximo paso 2`
+- terminar readme
+- terminar guia de preguntas y empezar simulacion de proyecto

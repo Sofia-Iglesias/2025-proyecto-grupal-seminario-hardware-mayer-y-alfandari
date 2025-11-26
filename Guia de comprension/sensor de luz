@@ -1,0 +1,92 @@
+### **Guía de Preguntas**
+
+#### **Nombre del componente: (Sensor de luz (LDR))
+
+1. ¿Qué tipo de dispositivo es (sensor o actuador)? Explicá brevemente su función principal.  
+Sensor
+
+
+2. ¿Qué tipo de señal utiliza para comunicarse con Arduino?  
+Usa una señal analógica, que varía según la intensidad de la luz.
+
+3. ¿Cuál es el rango de valores que puede entregar o recibir el componente?
+0 → mucha luz
+
+
+1023 → oscuridad o poca luz
+
+
+4. ¿Qué pines de conexión tiene el componente? Ennumerar y describir su función.  
+
+La LDR tiene dos patas:
+Una pata va al 5V, para alimentar el divisor de tensión.
+La otra pata se conecta al pin A1 del Arduino y a una resistencia de 10 kΩ que va a GND.
+ Esa resistencia forma un divisor que convierte los cambios de luz en voltaje variable.
+
+5. ¿Qué pin o pines de Arduino utilizan para conectarlo? ¿Por qué elegiste esos pines?  
+Se conecta al pin A1, porque la LDR entrega una señal analógica.
+Los pines A0–A5 del Arduino pueden leer valores entre 0 y 1023, mientras que los digitales solo leen 0 o 1.
+6. Dibujá y explicá brevemente el esquema de conexión del componente con Arduino (incluyendo resistencias si son necesarias).  
+
+Sensor
+Arduino
+LDR pata 1
+5V
+LDR pata 2
+A1 y una resistencia de 10k ohms
+otro extremo de la resistencia
+GND
+
+
+7. ¿Cuál es el principio de funcionamiento del componente?
+La LDR  cambia su resistencia según la cantidad de luz.
+Con mucha luz, la resistencia baja y el voltaje leído por el Arduino es bajo.
+
+
+Con poca luz, la resistencia sube y el voltaje es alto.
+ De esta forma, el Arduino puede saber si hay claridad u oscuridad.
+
+8. ¿Utiliza alguna librería particular para programarlo?
+No necesita ninguna librería.
+Se lee directamente con la función analogRead(A1).
+
+9. ¿Cómo se interpreta el dato de entrada o salida del componente en el programa?  
+El valor leído (0–1023) indica cuánta luz hay:
+Valores bajos: mucha luz.
+
+
+Valores altos: poca luz.
+ Ese valor puede usarse para encender o apagar un LED o un actuador de iluminación.
+
+
+10. ¿Qué limitaciones o precauciones eléctricas hay que tener en cuenta?
+
+No conectar directamente al GND sin la resistencia, ya que puede dañar la LDR o el pin del Arduino.
+No usar tensiones mayores a 5V.
+Evitar exponer la LDR a calor o humedad extrema.
+
+11. ¿Cómo verificarías que el componente funciona correctamente antes de incorporarlo al proyecto final?  
+Conectar la LDR (como se explicó) y subir un programa con analogRead(A1) que muestre los valores en el monitor serie.
+Si al taparla el valor aumenta y al iluminarla el valor baja, funciona correctamente.
+
+12. Simular en Tinkercad e incluir el link de la simulación.  
+https://www.tinkercad.com/things/1SRkXlTJEGr/editel?returnTo=%2Fdashboard
+
+13. En caso de aplicar, ¿qué valor o lectura esperás obtener en la simulación si el componente funciona correctamente?
+Con mucha luz: valor bajo (0–400).
+
+
+Con poca luz: valor alto (700–1023).
+
+
+14. ¿Cómo podría fallar el componente o cómo detectarías un mal funcionamiento en el código o en el circuito?
+
+
+Si el valor no cambia al tapar o iluminar la LDR, puede estar mal conectada o dañada.
+
+
+Si marca siempre 0 o 1023, puede faltar la resistencia o estar en corto.
+
+
+Si el monitor serie no muestra nada, revisar el código, las conexiones o la comunicación serie.
+
