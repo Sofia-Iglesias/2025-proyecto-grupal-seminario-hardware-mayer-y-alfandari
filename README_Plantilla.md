@@ -58,3 +58,5 @@ buzzer
 - dependiendo de la temperatura se prende o no el ventilador
 - dependiendo de la humedad se prende o no el humidificador
 - dependiendo de la luz se prende o no la luz de crecimiento artificial
+
+LINK A LA SIMULACION: https://www.tinkercad.com/things/77CHQoUsUPO-proyecto-final-1/editel?returnTo=https%3A%2F%2Fwww.tinkercad.com%2Fdashboard

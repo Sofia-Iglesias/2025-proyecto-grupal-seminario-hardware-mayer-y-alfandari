@@ -1,15 +1,3 @@
-## **TP \- Guía de Comprensión de Componentes \- Proyecto Seminario**
-
-Antes de recibir los componentes físicos, cada grupo deberá responder esta guía y realizar una simulación funcional del circuito propuesto.
-
-El objetivo de la guía es asegurarse de que comprendan el principio de funcionamiento, las conexiones y la lógica de programación de los elementos que van a utilizar.
-
-* Las respuestas deben ser claras, completas y referidas al componente elegido.  
-* Cada grupo deberá crear en el repositorio del proyecto una carpeta llamada **“Guía de Comprensión”**, donde se deberán subir un archivo respondiendo la Guía por cada componente utilizado.  
-* El nombre de cada archivo debe seguir el formato: *Nombre del proyecto \- Apellido1 \- Apellido2 \- Nombre del componente*.  
-  * Por ejemplo: *EstaciónMeteorológica \- Iglesias \- Mischener \- SensorDeTemperatura.*  
-* ***La entrega es obligatoria:*** sin la presentación de esta guía completa y la simulación correspondiente, no se entregarán los componentes físicos para el armado del proyecto.
-
 Nombre del componente: LED (simula la luz de crecimiento)
 ¿Qué tipo de dispositivo es (sensor o actuador)? Explicá brevemente su función principal.
  Actuador. Su función es emitir luz cuando recibe una señal eléctrica. En este proyecto, el LED simula una luz de crecimiento, que se enciende para dar iluminación artificial a la planta cuando no hay suficiente luz natural.
@@ -34,5 +22,55 @@ LOW (0): el LED se apaga.
 
 
 Cátodo (–): pata corta, se conecta al GND (tierra).
+
+
+¿Qué pin o pines de Arduino utilizan para conectarlo? ¿Por qué elegiste esos pines?
+ Se conecta al pin digital 8 del Arduino, porque ese pin puede enviar señales digitales HIGH o LOW, que permiten encender o apagar el LED fácilmente.
+
+
+Dibujá y explicá brevemente el esquema de conexión del componente con Arduino (incluyendo resistencias si son necesarias).
+ Conexiones:
+ LED → Arduino
+ Ánodo (pata larga) → Resistencia (220 Ω – 330 Ω) → Pin 8
+ Cátodo (pata corta) → GND 
+Explicación:
+ La resistencia se usa para limitar la corriente y evitar que el LED se queme. Cuando el pin 8 envía 5V (HIGH), la corriente pasa por la resistencia y el LED se enciende. Cuando el pin está en LOW, se apaga.
+¿Cuál es el principio de funcionamiento del componente?
+ El LED emite luz cuando pasa corriente eléctrica a través de él en la dirección correcta (del ánodo al cátodo). Arduino controla esa corriente enviando señales digitales. En este caso, la luz representa una lámpara que se encendería cuando el sensor detecta poca luz natural.
+
+
+¿Utiliza alguna librería particular para programarlo?
+ No, el LED no necesita ninguna librería. Se maneja directamente con las funciones digitalWrite() y pinMode() de Arduino.
+
+
+¿Cómo se interpreta el dato de entrada o salida del componente en el programa?
+ El LED interpreta el estado HIGH como “encendido” y LOW como “apagado”. El programa decide cuándo cambiar entre estos dos estados según los valores de otros sensores (por ejemplo, el sensor de luz).
+
+
+¿Qué limitaciones o precauciones eléctricas hay que tener en cuenta?
+ El LED no debe conectarse directamente a 5V sin resistencia, ya que puede quemarse por exceso de corriente. Además, hay que respetar la polaridad: si se conecta al revés, no encenderá.
+
+
+¿Cómo verificarías que el componente funciona correctamente antes de incorporarlo al proyecto final?
+ Se puede probar con un código simple que encienda y apague el LED cada segundo. Si el LED parpadea, significa que las conexiones están bien y funciona correctamente.
+12. Simular en Tinkercad e incluir el link de la simulación.
+https://www.tinkercad.com/things/0HAaInOl5R4-smashing-lahdi-kasi/editel?returnTo=https%3A%2F%2Fwww.tinkercad.com%2Fdashboard
+
+
+
+13. En caso de aplicar, ¿qué valor o lectura esperás obtener en la simulación si el componente funciona correctamente?
+El LED debería encenderse (simulando la luz de crecimiento) cuando la señal digital sea HIGH, y apagarse cuando sea LOW.
+
+
+14. ¿Cómo podría fallar el componente o cómo detectarías un mal funcionamiento en el código o en el circuito?
+ El LED podría fallar si:
+
+
+Se conecta sin resistencia (puede quemarse).
+Está conectado al revés (no encenderá).
+El pin usado no está configurado como salida.
+El código no cambia el estado del pin correctamente.
+ Para detectar fallas, revisaría el código, las conexiones (ánodo y cátodo), y se prueba con el código básico de parpadeo.
+
 
 

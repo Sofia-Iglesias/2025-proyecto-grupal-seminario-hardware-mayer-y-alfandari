@@ -1,16 +1,3 @@
-
-## **TP \- Guía de Comprensión de Componentes \- Proyecto Seminario**
-
-Antes de recibir los componentes físicos, cada grupo deberá responder esta guía y realizar una simulación funcional del circuito propuesto.
-
-El objetivo de la guía es asegurarse de que comprendan el principio de funcionamiento, las conexiones y la lógica de programación de los elementos que van a utilizar.
-
-* Las respuestas deben ser claras, completas y referidas al componente elegido.  
-* Cada grupo deberá crear en el repositorio del proyecto una carpeta llamada **“Guía de Comprensión”**, donde se deberán subir un archivo respondiendo la Guía por cada componente utilizado.  
-* El nombre de cada archivo debe seguir el formato: *Nombre del proyecto \- Apellido1 \- Apellido2 \- Nombre del componente*.  
-  * Por ejemplo: *EstaciónMeteorológica \- Iglesias \- Mischener \- SensorDeTemperatura.*  
-* ***La entrega es obligatoria:*** sin la presentación de esta guía completa y la simulación correspondiente, no se entregarán los componentes físicos para el armado del proyecto.
-
 **Guía de Preguntas**
 
 Nombre del componente: (Humidificador ultrasónico) 
@@ -27,3 +14,32 @@ Recibe solo dos estados: 0 (LOW) → apagado 1 (HIGH) → encendido
 Ennumerar y describir su función. +V (alimentación): aquí conectás la fuente de alimentación del humidificador (puede ser 5 V o 12 V según el modelo). Su función es darle la energía necesaria para generar la niebla; nunca conectar esto directo al pin del Arduino. GND (tierra): se conecta a la tierra de la fuente y debe compartirse con la tierra del Arduino para que la señal de control funcione correctamente. Su función es cerrar el circuito de alimentación. IN (señal de control): es la entrada que recibe la orden de encender/apagar. El Arduino la controla mediante un pin digital (por ejemplo D8), pero no debe conectar directamente a la carga: la señal IN debe ir a un módulo relé o a un transistor/MOSFET que actúe como interruptor entre la alimentación (+V) y el humidificador. La función del IN es recibir HIGH para encender y LOW para apagar. 
 
 5. ¿Qué pin o pines de Arduino utilizan para conectarlo? ¿Por qué elegiste esos pines? Se conecta al pin digital D8 (por ejemplo).
+ Porque los pines digitales pueden enviar señales de encendido o apagado (HIGH/LOW) para controlar el actuador mediante un relevador o transistor.
+
+ 6. Dibujá y explicá brevemente el esquema de conexión del componente con Arduino (incluyendo resistencias si son necesarias). D8 → IN del rele/transistor 5V o 12V → +V del humidificador GND → GND común con Arduino 
+
+7. ¿Cuál es el principio de funcionamiento del componente? Cuando el Arduino detecta que la tierra está seca (según el sensor de humedad), envía una señal digital al pin D8 para activar el humidificador, que genera vapor de agua. Cuando el suelo se humedece, el Arduino apaga la señal y detiene el vapor.
+
+ 8. ¿Utiliza alguna librería particular para programarlo? No necesita ninguna librería especial. Se usa digitalWrite(). 
+
+9. ¿Cómo se interpreta el dato de entrada o salida del componente en el programa? El Arduino lee el sensor de humedad, compara el valor y, si está bajo el umbral, manda digitalWrite(D8, HIGH) para encender el humidificador.
+
+ 10. ¿Qué limitaciones o precauciones eléctricas hay que tener en cuenta?
+ El humidificador no debe conectarse directo al Arduino, porque consume mucha corriente. Usar relay o transistor y fuente externa (5V o 12V según el modelo). No acercar agua al circuito eléctrico. 
+
+11. ¿Cómo verificarías que el componente funciona correctamente antes de incorporarlo al proyecto final?
+ Probar con un código simple que encienda y apague el módulo cuando se mande HIGH y LOW desde Arduino. 
+
+12. Simular en Tinkercad e incluir el link de la simulación. 
+Simulamos el humidificador como un LED: 
+
+https://www.tinkercad.com/things/bDu0tjvvASv-terrific-gogo-blorr/editel?returnTo=https%3A%2F%2Fwww.tinkercad.com%2Fdashboard 
+
+
+13. En caso de aplicar, ¿qué valor o lectura esperás obtener en la simulación si el componente funciona correctamente? 
+Cuando el valor de humedad sea bajo (tierra seca), el “LED o motor” se enciende (simulando el humidificador). 
+
+14. ¿Cómo podría fallar el componente o cómo detectarías un mal funcionamiento en el código o en el circuito? 
+No enciende: error en el pin o falta de fuente externa. 
+Encendido permanente: error en el código o relay trabado. 
+Calentamiento: exceso de voltaje.
